@@ -1,22 +1,22 @@
+const CLICKED_CALSS = "clicked";
+
 const title = document.querySelector("#title");
-
-const BASE_COLOR = "tomato";
-const NEW_COLOR = "Darkcyan";
-
 
 function clickHandler()
 {
-    const currColor = title.style.color;
-    if(currColor === BASE_COLOR) title.style.color = NEW_COLOR;
-    else title.style.color = BASE_COLOR;
-    
+    title.classList.toggle(CLICKED_CALSS);
+
+    // const hasContain = title.classList.contains(CLICKED_CALSS);
+    // if(!hasContain)
+    // title.classList.add(CLICKED_CALSS);
+    // else
+    // title.classList.remove(CLICKED_CALSS);
     
 }
 
 function init()
 {
-    title.style.color = BASE_COLOR;
-    title.addEventListener("click", clickHandler);
+   title.addEventListener("click", clickHandler);
 }
 init();
 
