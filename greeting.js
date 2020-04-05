@@ -3,7 +3,7 @@ const form = document.querySelector(".js-form"),
       greeting = document.querySelector(".js-greetings");
       
 
-
+const none = "";
 const USER_LIST = "currentUser",
       SHOWING_NAME = "showing";
 
@@ -26,11 +26,12 @@ function setName()
 function getName()
 {
     const currentUser = localStorage.getItem(USER_LIST);
+   
     if(!currentUser)
     {
         console.log("input any user name");
         setName();
-        
+       
     }
     else
     {
@@ -47,11 +48,16 @@ function printGreeting(text)
 
 function submitHandeler(event)
 {
-    event.preventDefault();
     const currentVal = input.value;
-    console.log(currentVal);
-    printGreeting(currentVal);
-    saveName(currentVal);
+
+    if(currentVal !== "")
+    {
+        event.preventDefault();
+        console.log(currentVal);
+        printGreeting(currentVal);
+        saveName(currentVal);
+    }
+   
     
 }
 
