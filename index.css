@@ -1,3 +1,9 @@
 body { background-color:#f7f1df;}
 h1{color: tomato; font-size: 120pt; text-align: center;
 }
+.form,
+.greetings
+{display: none;}
+
+.showing
+{display: block; color: rgb(250, 188, 117); font-size: 30pt; text-align: center;}
