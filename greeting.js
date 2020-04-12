@@ -3,7 +3,6 @@ const form = document.querySelector(".js-form"),
       greeting = document.querySelector(".js-greetings");
       
 
-const none = "";
 const USER_LIST = "currentUser",
       SHOWING_NAME = "showing";
 

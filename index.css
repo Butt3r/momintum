@@ -5,5 +5,24 @@ h1{color: tomato; font-size: 120pt; text-align: center;
 .greetings
 {display: none;}
 
+input::placeholder
+{color: rgb(56, 57, 63);}
+
+input[type=text]
+{transition: width 0.4s ease-in-out; color: tomato }
+
+input[type=text]:focus
+{width: 30%;}
+
 .showing
-{display: block; color: rgb(250, 188, 117); font-size: 30pt; text-align: center;}
+{display: block; color: rgb(233, 148, 51); font-size: 30pt; text-align: center;}
+
+ul {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.js-todoForm
+{ text-align: center; margin: 5px; }
