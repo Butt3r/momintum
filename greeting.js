@@ -1,5 +1,5 @@
 const form = document.querySelector(".js-form"),
-      input = form.querySelector("input"),
+      input = form.querySelector(".name-input"),
       greeting = document.querySelector(".js-greetings");
       
 
@@ -38,25 +38,53 @@ function getName()
     }
 }
 
+
+
+
 function printGreeting(text)
 {
+    const G_date = new Date();
+    const hours = G_date.getHours();
+
     form.classList.remove(SHOWING_NAME);
     greeting.classList.add(SHOWING_NAME);
-    greeting.innerText = `Hello ${text}`;
+
+  
+    const greetings = ["Hello,", "Hi,", "Welcome Home", "Howdy!", "How's your day?", "What's up?", "Good to see you,", "What's new?", "waiting for you,", "I am here for you,", "You can make it!"];
+    const randomStr = greetings[Math.floor(Math.random() * greetings.length)];
+    console.log("random month =>", randomStr);
+
+    if(hours > 7 && hours < 12)
+    {
+    greeting.innerText = `Good Morning, ${text}.`;
+    }
+    else if(hours > 12 && hours < 16)
+    {
+    greeting.innerText = `Good Afternoon, ${text}.`;
+    }
+    else if(hours >= 21)
+    {
+    greeting.innerText = `Good Evening, ${text}.`;
+    }
+    else
+    {
+    greeting.innerText = `${randomStr} ${text}.`;
+    }
 }
 
 function submitHandeler(event)
 {
+    event.preventDefault();
     const currentVal = input.value;
 
     if(currentVal !== "")
     {
-        event.preventDefault();
         console.log(currentVal);
         printGreeting(currentVal);
         saveName(currentVal);
     }
    
+
     
 }
 
