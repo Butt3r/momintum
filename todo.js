@@ -42,7 +42,7 @@ function submitHandeler(event)
     toDoInput.value = "";
     }
 
-    if(currentVal.length > 20)
+    if(currentVal.length > 30)
     {
       alert("too long! please, try again");
       window.location.reload();
@@ -73,6 +73,7 @@ function saveTodos()
 
 function deleteTodo(event)
 {
+
     const btn = event.target;
     const li = btn.parentNode;
     toDoList.removeChild(li);
@@ -81,12 +82,20 @@ function deleteTodo(event)
         return toDo.id !== parseInt(li.id);
     });
     
-    console.log(clean);
 
+    console.log(clean);
     toDosArr = clean;
     saveTodos();
+
+    if(btn)
+    {
+        document.getElementById("cheer").innerText = "well done! 🍬";
+        
+    }
+
     
 }
+
 
 
 

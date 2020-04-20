@@ -88,3 +88,37 @@ margin-block-start: 0.40em;
 }
 
 
+@keyframes bottomFadeOut {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+  
+}
+
+
+
+#cheer
+{
+  font-weight:400;
+  font-size: 20px;
+  color: snow;
+  display: table;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  animation: bottomFadeOut 2s linear forwards paused initial running;
+  -webkit-animation: bottomFadeOut 2s linear forwards;
+  -moz-animation: bottomFadeOut 2s linear forwards;
+  
+ 
+}
+
