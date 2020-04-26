@@ -31,6 +31,8 @@ function printTodo(text)
 }
 
 
+
+
 function submitHandeler(event)
 {
     event.preventDefault();
@@ -73,7 +75,7 @@ function saveTodos()
 
 function deleteTodo(event)
 {
-
+   
     const btn = event.target;
     const li = btn.parentNode;
     toDoList.removeChild(li);
@@ -86,16 +88,23 @@ function deleteTodo(event)
     console.log(clean);
     toDosArr = clean;
     saveTodos();
-
-    if(btn)
-    {
-        document.getElementById("cheer").innerText = "well done! 🍬";
-        
-    }
+    popup();
+   
 
     
 }
 
+
+function popup()
+{
+    const obj = document.querySelector(".cheer");
+    obj.innerText = "well done! 🍬";
+    obj.classList.remove('animation');
+    setTimeout(function()
+    {
+        obj.classList.add('animation');
+    }, 10)
+}
 
 
 
