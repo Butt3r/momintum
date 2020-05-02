@@ -1,11 +1,14 @@
 const form = document.querySelector(".js-form"),
       input = form.querySelector(".name-input"),
       greeting = document.querySelector(".js-greetings");
-      
+     
 
+      
 const USER_LIST = "currentUser",
       SHOWING_NAME = "showing";
-
+     
+      
+    
 
 
 function saveName(text)
@@ -18,7 +21,6 @@ function setName()
 {
     form.classList.add(SHOWING_NAME);
     form.addEventListener("submit",  submitHandeler);
-
 }
 
 
@@ -72,21 +74,22 @@ function printGreeting(text)
     }
 }
 
+
 function submitHandeler(event)
 {
     event.preventDefault();
     const currentVal = input.value;
-
+  
     if(currentVal !== "")
     {
         console.log(currentVal);
         printGreeting(currentVal);
         saveName(currentVal);
-    }
-   
 
-    
+    }
+
 }
+
 
 
 
@@ -95,5 +98,7 @@ function init()
 {
     getName();
 }
+
+
 
 init();
