@@ -1,21 +1,22 @@
 /* body { background-color:#1f262e;} */
 body{
-  background-image: url(https://source.unsplash.com/collection/1052192/1600x900);
-  /* background-image: url(https://source.unsplash.com/collection/3694365/1600x900); */
+  background-image: url(https://source.unsplash.com/collection/1401382/1600x1000);
   background-size:cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh;
+  min-height: 90vh;
 
 }
+
+
 h1
 {
-  color: snow;
+  color: ivory;
 /* color: #21cf95f1; */
 font-size: 120pt;
 text-align: center;
-margin-block-start: 0.40em;
-margin-block-end: 0.20em;
+/* margin-block-start: 1.40em; */
+margin-block-end: 0.10em;
 }
 
 
@@ -31,20 +32,23 @@ text-align: center;
 margin: 1px; 
 }
 
+/* .js-todoForm.Isvisible
+{
+  display: block;
+} */
 
 .name-input,
 .todo-input
 {
   position: relative;
-  color: snow;
   /* background-color: #29323d; */
   font-weight:500;
   font-size: 18px;
   border-radius: 5px;
   line-height: 22px;
-  background-color: rgba( 255, 255, 255, 0.5 );
+  background-color: rgba( 255, 255, 255, 0.3 );
   /* background-color: transparent; */
-    border:2px solid rgba(255, 255, 255, 0.3);
+    border:2px solid rgba(255, 255, 255, 0.4);
   /* border:2px solid #2b333d; */
   padding: 13px;
   margin-bottom: 10px;
@@ -57,14 +61,14 @@ margin: 1px;
 
 
 input::placeholder
-{color: snow; /* #83a0bdbe; */}
+{color: ivory; opacity: 10;}
 
 
 input[type=text]
 {
 width: 25%;
 transition: width 0.9s ease-in-out;
-color: #40bf95;
+color: #e4af03;
 }
 
 input[type=text]:focus
@@ -73,11 +77,11 @@ input[type=text]:focus
 .showing
 {
 display: block;
-color: snow;
-font-size: 50pt;
+color: ivory;
+font-size: 60pt;
 text-align: center;
-margin-block-start: 0.40em;
-/* margin-block-end: 0.60em */
+margin-block-start: 0.30em;
+/* margin-block-end: 0.80em */
 }
 
 .js-todoList
@@ -96,7 +100,7 @@ margin-block-start: 0.40em;
   flex-grow: 1;
   margin-left: -20px;
   margin-right: 10px;
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 800;
   color: rgba(244, 246, 252, 0.938);
 
@@ -122,16 +126,15 @@ margin-block-start: 0.40em;
 
 .cheer
 {
-  font-weight:400;
-  font-size: 20px;
+  font-weight:700;
+  font-size: 23px;
   color: snow;
   display: table;
   position: relative;
   margin-left: auto;
   margin-right: auto;
   opacity: 0;
-  
- 
+
 }
 
 .animation
@@ -141,14 +144,14 @@ margin-block-start: 0.40em;
   -moz-animation: bottomFadeOut 2s;
 }
 
-/* img{
-  display:block;
-  width:100%; height:100%;
-  object-fit: cover;
-} */
 
-
-/* .js-img
+.js-weather
 {
-  display:none;
-} */
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  font-size: 20px;
+  color: snow;
+  opacity: 3;
+}
+

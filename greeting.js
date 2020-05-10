@@ -1,6 +1,7 @@
 const form = document.querySelector(".js-form"),
       input = form.querySelector(".name-input"),
-      greeting = document.querySelector(".js-greetings");
+      greeting = document.querySelector(".js-greetings"),
+      todo = document.querySelector(".js-todoForm");
      
 
       
@@ -72,6 +73,7 @@ function printGreeting(text)
     {
     greeting.innerText = `${randomStr} ${text}.`;
     }
+
 }
 
 
@@ -85,18 +87,17 @@ function submitHandeler(event)
         console.log(currentVal);
         printGreeting(currentVal);
         saveName(currentVal);
-
+        // todo.classList.add('Isvisible');
     }
 
+
 }
-
-
-
 
 
 function init()
 {
     getName();
+    
 }
 
 

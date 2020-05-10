@@ -70,7 +70,9 @@ function loadTodos()
    
 function saveTodos()
 {
-    localStorage.setItem(TODOS_LIST,JSON.stringify(toDosArr));
+    
+     localStorage.setItem(TODOS_LIST,JSON.stringify(toDosArr));
+
 }
 
 function deleteTodo(event)
