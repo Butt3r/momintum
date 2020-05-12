@@ -1,4 +1,5 @@
-const weatherAPI = document.querySelector(".js-weather");
+const weatherAPI = document.querySelector(".js-weather"),
+      qpalce = document.querySelector(".js-place");
 
 const API_KEY = "180b7c652db881478c7246ddb81ef82f";
 const COORDS = "coords";
@@ -14,9 +15,11 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&app
 })
 .then(function(json)
 {
-    const temperature = json.main.temp;
-    const place = json.name;
-    weatherAPI.innerText = `${temperature}°C \n ${place}`;
+
+    const temperature = (Math.round(json.main.temp));
+    const place = json.name.replace("-si", " ");
+    weatherAPI.innerText = `${temperature}°`;
+    qpalce.innerText = `${place}`;
 
     
 });
