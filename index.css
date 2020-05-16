@@ -1,11 +1,12 @@
 /* body { background-color:#1f262e;} */
 body{
-  background-image: url(https://source.unsplash.com/collection/1401382/1600x1000);
+  background-image: url(https://source.unsplash.com/collection/1401382/1600x1000); 
   background-size:cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 90vh;
 
+  /* 1401382 */
 }
 
 
@@ -81,7 +82,7 @@ color: ivory;
 font-size: 60pt;
 text-align: center;
 margin-block-start: 0.30em;
-/* margin-block-end: 0.80em */
+margin-block-end: 0.80em
 }
 
 .js-todoList
@@ -149,7 +150,7 @@ margin-block-start: 0.30em;
 {
   text-align: right;
   position: absolute;
-  top: 18px;
+  top: 13px;
   right: 18px;
   font-size: 27px;
   color: snow;
@@ -161,7 +162,7 @@ margin-block-start: 0.30em;
 {
   text-align: right;
   position: absolute;
-  top: 50px;
+  top: 45px;
   right: 18px;
   font-size: 17px;
   color: snow;
@@ -172,12 +173,39 @@ margin-block-start: 0.30em;
 .btn
 {
 
-  max-width: 100%;
+  max-width: 30%;
   width: auto;
   height: auto;
   position: absolute;
-  bottom: 4px;
+  top: 3px;
   left: 5px;
   opacity: 0.7;
   
 }
+
+
+.info {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  font-size: 24px;
+  color: snow;
+  opacity: 0.7;
+
+}
+
+.info .text {
+  visibility: hidden;
+  width: 120px;
+  font-size: 15px;
+  font-weight:400;
+  color: snow;
+  text-align: center;
+  margin-left: 14px;
+
+}
+
+.info:hover .text {
+  visibility: visible;
+}
+
