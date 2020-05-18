@@ -22,8 +22,11 @@ function printTodo(text)
     toDoList.appendChild(li);
 
     const toDosObj = { text: text, id: toDoId, }
+    if(toDosArr.length < 5)
+    {
     toDosArr.push(toDosObj);
     saveTodos();
+    }
 
 
 
@@ -38,18 +41,13 @@ function submitHandeler(event)
     event.preventDefault();
     const currentVal = toDoInput.value;
 
-    if(currentVal !== "" && currentVal.length < 20)
+    if(currentVal !== "")
     {
     printTodo(currentVal);
     toDoInput.value = "";
     }
 
-    if(currentVal.length > 30)
-    {
-      alert("too long! please, try again");
-      window.location.reload();
-    }
-
+  
 
 }
 
