@@ -1,6 +1,7 @@
 const toDoForm = document.querySelector(".js-todoForm"),
 toDoInput = toDoForm.querySelector(".todo-input"),
-toDoList = document.querySelector(".js-todoList");
+toDoList = document.querySelector(".js-todoList"),
+toDoWarn = document.querySelector(".warn");
 
 
 const TODOS_LIST = 'toDos';
@@ -13,7 +14,7 @@ function printTodo(text)
     const delBtn = document.createElement("delbtn");
     const span = document.createElement("span");
     const toDoId = toDosArr.length + 1;
-    delBtn.innerHTML= " ❌";
+    delBtn.innerHTML= " 🚀";
     delBtn.addEventListener("click", deleteTodo);
     span.innerText = text;
     li.appendChild(span);
@@ -29,28 +30,42 @@ function printTodo(text)
     }
 
 
-
-
 }
 
 
-
+function warning()
+{
+    toDoWarn.classList.remove('hide');
+    toDoWarn.innerText = "Wow, you’ve got a lot of passion!";
+    toDoWarn.classList.remove('animation');
+    setTimeout(function()
+    {
+        toDoWarn.classList.add('animation');
+    }, 50)
+}
 
 function submitHandeler(event)
 {
-    event.preventDefault();
-    const currentVal = toDoInput.value;
 
+    event.preventDefault();
+
+    if(toDosArr.length == 5)
+    {
+        warning();
+    }
+
+    if(toDosArr.length < 5)
+    {
+    currentVal = toDoInput.value;
     if(currentVal !== "")
     {
     printTodo(currentVal);
     toDoInput.value = "";
     }
-
-  
+    
 
 }
-
+}
 
 function loadTodos()
 {
@@ -97,15 +112,15 @@ function deleteTodo(event)
 
 function popup()
 {
+    toDoWarn.classList.add('hide');
     const obj = document.querySelector(".cheer");
-    obj.innerText = "well done! 🍬";
+    obj.innerText = "well done! 🌟";
     obj.classList.remove('animation');
     setTimeout(function()
     {
         obj.classList.add('animation');
     }, 10)
 }
-
 
 
 function init()

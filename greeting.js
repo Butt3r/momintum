@@ -8,7 +8,6 @@ const form = document.querySelector(".js-form"),
 const USER_LIST = "currentUser",
       SHOWING_NAME = "showing";
      
-      
     
 
 
@@ -42,8 +41,6 @@ function getName()
 }
 
 
-
-
 function printGreeting(text)
 {
     const G_date = new Date();
@@ -53,27 +50,30 @@ function printGreeting(text)
     greeting.classList.add(SHOWING_NAME);
 
   
-    const greetings = ["Hello,", "Hi,", "Welcome Home", "Howdy!", "How's your day?", "What's up?", "Good to see you,", "What's new?", "waiting for you,", "I am here for you,", "You can make it!"];
+    const greetings = ["Hello,", "Hi,", "Welcome home", "Howdy!", "How's your day?", "What's up?", "Good to see you,", "What's new?", "I am here for you,", "Have a good day"];
+    const greetings2 = ["Good morning", "Good afternoon", "Good evening"];
     const randomStr = greetings[Math.floor(Math.random() * greetings.length)];
     console.log("random month =>", randomStr);
 
     if(hours > 7 && hours < 12)
     {
-    greeting.innerText = `Good Morning, ${text}.`;
+    greeting.innerText = `${greetings2[0]} ${text}.`;
     }
     else if(hours > 12 && hours < 16)
     {
-    greeting.innerText = `Good Afternoon, ${text}.`;
+    greeting.innerText = `${greetings2[1]} ${text}.`;
     }
     else if(hours >= 21)
     {
-    greeting.innerText = `Good Evening, ${text}.`;
+    greeting.innerText = `${greetings2[2]} ${text}.`;
     }
     else
     {
     greeting.innerText = `${randomStr} ${text}.`;
     }
 
+    todo.classList.add('show');
+   
 }
 
 
@@ -87,9 +87,7 @@ function submitHandeler(event)
         console.log(currentVal);
         printGreeting(currentVal);
         saveName(currentVal);
-        // todo.classList.add('Isvisible');
     }
-
 
 }
 
@@ -97,7 +95,6 @@ function submitHandeler(event)
 function init()
 {
     getName();
-    
 }
 
 
