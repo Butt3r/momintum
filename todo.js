@@ -14,7 +14,7 @@ function printTodo(text)
     const delBtn = document.createElement("delbtn");
     const span = document.createElement("span");
     const toDoId = toDosArr.length + 1;
-    delBtn.innerHTML= " 🚀";
+    delBtn.innerHTML= "🚀";
     delBtn.addEventListener("click", deleteTodo);
     span.innerText = text;
     li.appendChild(span);
@@ -23,7 +23,7 @@ function printTodo(text)
     toDoList.appendChild(li);
 
     const toDosObj = { text: text, id: toDoId, }
-    if(toDosArr.length < 5)
+    if(toDosArr.length < 6)
     {
     toDosArr.push(toDosObj);
     saveTodos();
@@ -49,12 +49,13 @@ function submitHandeler(event)
 
     event.preventDefault();
 
-    if(toDosArr.length == 5)
+    if(toDosArr.length == 6)
     {
-        warning();
+        alert("Wow, you've got a lot of passion! but, first You must finish it.")
+        //warning();
     }
 
-    if(toDosArr.length < 5)
+    if(toDosArr.length < 6)
     {
     currentVal = toDoInput.value;
     if(currentVal !== "")

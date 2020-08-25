@@ -5,21 +5,6 @@
         <title>momintum :: welcome</title>
         <link rel ="stylesheet" href="index.css" />
         <body>
-            <!-- <img id="image" class="js-img" src="https://source.unsplash.com/category/nature/300x200">
-
-        <script type ="text/javascript">
-
-        var image = document.images[0]
-        var  bigImg = document.createElement("img")
-
-        bigImg.onload = function(){
-            image.src = this.src
-        }
-
-        bigImg.src = "https://source.unsplash.com/category/nature/1600x900";
-        </script> -->
-
-
             <div class="js-clock">
                 <h1 class="js-title"></h1>
                 <!-- <h1>00:00</h1> -->
@@ -38,22 +23,40 @@
 
             <ul class="js-todoList">
             </ul>
-
+        
             <div class="warn"></div>
 
             <h5 class="cheer"></h5>
         
+            <form class="js-search">
+            <input type="text" class="search-input">
+            </form>
+
+            <img class="js-icon" />
             <span class="js-weather"></span>
             <span class="js-place"></span>
             <a href="https://www.google.com" class="btn" >
             <img src="images/g_logo3.png" alt="google"></a>  
+            <div class = "search-icon">
+            <img src="images/serach_icon3.png"></div>
             <div class="info">🧈
                 <span class="text">made by Butt3r </span>
             </div>
+
+            <button onclick="goGoogle()">google</button>
+            <button onclick="goNaver()">naver</button>
+            <button onclick="goDaum()">daum</button>
+
+
             <script src="clock.js"></script>
             <script src="greeting.js"></script>
             <script src="todo.js"></script>
             <script src="weather.js"></script>
+            <script src="search.js"></script>
+            <script src="soundCloud.js"></script>
+
+            
+
 
         </body>
     </head>
