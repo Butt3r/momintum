@@ -4,8 +4,12 @@ toDoList = document.querySelector(".js-todoList"),
 toDoWarn = document.querySelector(".warn");
 
 
+
 const TODOS_LIST = 'toDos';
 let toDosArr = [];
+
+
+
 
 
 function printTodo(text)
@@ -14,6 +18,8 @@ function printTodo(text)
     const delBtn = document.createElement("delbtn");
     const span = document.createElement("span");
     const toDoId = toDosArr.length + 1;
+
+    
     delBtn.innerHTML= "🚀";
     delBtn.addEventListener("click", deleteTodo);
     span.innerText = text;
@@ -23,7 +29,7 @@ function printTodo(text)
     toDoList.appendChild(li);
 
     const toDosObj = { text: text, id: toDoId, }
-    if(toDosArr.length < 6)
+    if(toDosArr.length < 5)
     {
     toDosArr.push(toDosObj);
     saveTodos();
@@ -33,29 +39,29 @@ function printTodo(text)
 }
 
 
-function warning()
-{
-    toDoWarn.classList.remove('hide');
-    toDoWarn.innerText = "Wow, you’ve got a lot of passion!";
-    toDoWarn.classList.remove('animation');
-    setTimeout(function()
-    {
-        toDoWarn.classList.add('animation');
-    }, 50)
-}
+// function warning()
+// {
+//     toDoWarn.classList.remove('hide');
+//     toDoWarn.innerText = "Wow, you’ve got a lot of passion!";
+//     toDoWarn.classList.remove('animation');
+//     setTimeout(function()
+//     {
+//         toDoWarn.classList.add('animation');
+//     }, 50)
+// }
 
 function submitHandeler(event)
 {
 
     event.preventDefault();
 
-    if(toDosArr.length == 6)
+    if(toDosArr.length == 5)
     {
-        alert("Wow, you've got a lot of passion! but, first You must finish it.")
+        alert("Wow, you've got a lot of passion!")
         //warning();
     }
 
-    if(toDosArr.length < 6)
+    if(toDosArr.length < 5)
     {
     currentVal = toDoInput.value;
     if(currentVal !== "")
@@ -85,7 +91,7 @@ function loadTodos()
 function saveTodos()
 {
     
-     localStorage.setItem(TODOS_LIST,JSON.stringify(toDosArr));
+    localStorage.setItem(TODOS_LIST,JSON.stringify(toDosArr));
 
 }
 
