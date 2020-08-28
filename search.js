@@ -1,18 +1,68 @@
+// 테스트용 코드라 엄청 더러움..! 나중에 다시 리팩토링 필수!
+
+
 const search = document.querySelector(".js-search");
 const searchInput = search.querySelector("input");
 const icon = document.querySelector(".search-icon");
+const goggle = document.querySelector("#g");
+const naver = document.querySelector("#n");
+const daum = document.querySelector("#d");
+
+
+let gMode = localStorage.getItem("gMode");
+let nMode = localStorage.getItem("nMode");
+let dMode = localStorage.getItem("dMode");
 
 search.classList.add('hide');
-var flag = 0;
+
+
+function goGoogle()
+{
+    goggle.classList.add('colored');
+    naver.classList.remove('colored');
+    daum.classList.remove('colored');
+    localStorage.setItem("gMode", "enabled");
+    localStorage.setItem("nMode", null);
+    localStorage.setItem("dMode", null);
+    //history.go(0);
+}
 
 function goNaver()
 {
-   flag = 1;
+    naver.classList.add('colored');
+    goggle.classList.remove('colored');
+    daum.classList.remove('colored');
+    localStorage.setItem("nMode", "enabled");
+    localStorage.setItem("gMode", null);
+    localStorage.setItem("dMode", null);
+    //history.go(0);
+    
 }
 
 function goDaum()
 {
-    flag = 2;
+    daum.classList.add('colored');
+    goggle.classList.remove('colored');
+    naver.classList.remove('colored');
+    localStorage.setItem("dMode", "enabled");
+    localStorage.setItem("gMode", null);
+    localStorage.setItem("nMode", null);
+    //history.go(0);
+    
+}
+
+function setDefault()
+{
+   
+    goggle.classList.add('colored');
+    localStorage.setItem("gMode", "enabled");
+         
+    if(dMode === 'enabled' || nMode === 'enabled')
+    {
+        goggle.classList.remove('colored');
+        localStorage.setItem("gMode", null); 
+    }
+
 }
 
 
@@ -28,16 +78,19 @@ search.addEventListener('click', function(e){
 });
 
 search.addEventListener('submit', function(e){
-    e.stopPropagation();
     e.preventDefault();
 
-    window.location.href = `https://www.google.com/search?q=${searchInput.value}`;
+    gMode = localStorage.getItem("gMode");
+    dMode = localStorage.getItem("dMode");
+    nMode = localStorage.getItem("nMode");
 
-    if(flag == 1)
-    {
+    window.location.href = `https://www.google.com/search?q=${searchInput.value}`;
+    
+    if(dMode !== 'enabled' && gMode !=='enabled')
+    { 
         window.location.href = `https://search.naver.com/search.naver?sm=top_hty&fbm=1&ie=utf8&query=${searchInput.value}`;
     }
-    else if(flag == 2)
+    else if(nMode !== 'enabled' && gMode !=='enabled')
     {
         window.location.href = `https://search.daum.net/search?nil_suggest=btn&w=tot&DA=SBC&q=${searchInput.value}`;
     }
@@ -50,3 +103,29 @@ document.addEventListener('click', function(e){
     search.classList.add('hide');
     icon.classList.remove('hide');
 });
+
+
+function paintColored()
+{
+    if(gMode === 'enabled')
+    {
+        goggle.classList.add('colored');
+    }
+    else if(nMode === 'enabled')
+    {
+        naver.classList.add('colored');
+    }
+    else if(dMode === 'enabled')
+    {
+        daum.classList.add('colored');
+    }
+}
+
+
+function init()
+{
+    setDefault();
+    paintColored();
+}
+
+init();

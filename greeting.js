@@ -2,15 +2,13 @@ const form = document.querySelector(".js-form"),
       input = form.querySelector(".name-input"),
       greeting = document.querySelector(".js-greetings"),
       todo = document.querySelector(".js-todoForm");
+    
      
-
-      
 const USER_LIST = "currentUser",
       SHOWING_NAME = "showing";
-     
     
-
-
+      
+    
 function saveName(text)
 {
   localStorage.setItem(USER_LIST, text);
@@ -19,37 +17,32 @@ function saveName(text)
 
 function setName()
 {
+
+    greeting.classList.remove(SHOWING_NAME);
     form.classList.add(SHOWING_NAME);
     form.addEventListener("submit",  submitHandeler);
 }
 
-
-function getName()
+function submitHandeler(event)
 {
-    const currentUser = localStorage.getItem(USER_LIST);
-   
-    if(!currentUser)
+    event.preventDefault();
+    const currentVal = input.value;
+  
+    if(currentVal !== "")
     {
-        console.log("input any user name");
-        setName();
-       
+        printGreeting(currentVal);
+        saveName(currentVal);
     }
-    else
-    {
-        printGreeting(currentUser);
-    }
-}
-
-
+} 
 function printGreeting(text)
 {
-    const G_date = new Date();
-    const hours = G_date.getHours();
 
     form.classList.remove(SHOWING_NAME);
     greeting.classList.add(SHOWING_NAME);
 
-  
+    const G_date = new Date();
+    const hours = G_date.getHours();
+
     const greetings = ["Hello,", "Hi,", "Welcome home", "Howdy!", "How's your day?", "What's up?", "Good to see you,", "What's new?", "I am here for you,", "Have a good day"];
     const greetings2 = ["Good morning", "Good afternoon", "Good evening"];
     const randomStr = greetings[Math.floor(Math.random() * greetings.length)];
@@ -71,29 +64,26 @@ function printGreeting(text)
     {
     greeting.innerText = `${randomStr} ${text}.`;
     }
-
     todo.classList.add('show');
-   
 }
 
-
-function submitHandeler(event)
+function getName()
 {
-    event.preventDefault();
-    const currentVal = input.value;
-  
-    if(currentVal !== "")
+    const currentUser = localStorage.getItem(USER_LIST);
+   
+    if(!currentUser)
     {
-        console.log(currentVal);
-        printGreeting(currentVal);
-        saveName(currentVal);
+        setName();
     }
-
+    else
+    {
+        printGreeting(currentUser);
+    }
 }
-
 
 function init()
 {
+    
     getName();
 }
 

@@ -29,7 +29,7 @@ function printTodo(text)
     toDoList.appendChild(li);
 
     const toDosObj = { text: text, id: toDoId, }
-    if(toDosArr.length < 5)
+    if(toDosArr.length < 3)
     {
     toDosArr.push(toDosObj);
     saveTodos();
@@ -55,13 +55,13 @@ function submitHandeler(event)
 
     event.preventDefault();
 
-    if(toDosArr.length == 5)
+    if(toDosArr.length == 3)
     {
         alert("Wow, you've got a lot of passion!")
         //warning();
     }
 
-    if(toDosArr.length < 5)
+    if(toDosArr.length < 3)
     {
     currentVal = toDoInput.value;
     if(currentVal !== "")

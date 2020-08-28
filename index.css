@@ -1,7 +1,8 @@
 /* body { background-color:#1f262e;} */
 body{
   /* background-image: url(https://source.unsplash.com/collection/1401382/1600x1000);  */
-  background-image: url(https://source.unsplash.com/collection/12152250/1800x1000); 
+  /* background-image: url(https://source.unsplash.com/collection/12152250/1800x1000);  */
+  background-image: url(https://source.unsplash.com/collection/12178065/1600x1000); 
   background-size:cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -14,12 +15,13 @@ h1
 {
   color: ivory;
 /* color: #21cf95f1; */
-font-size: 120pt;
+font-size: 124pt;
 text-align: center;
-/* margin-block-start: 1.40em; */
+margin-top: 0.90em;
 margin-block-end: 0.10em;
 text-shadow: 2px 3px 9px rgba(51, 51, 51, 0.2);
 }
+
 
 
 .form,
@@ -34,10 +36,17 @@ margin: 1px;
 display: none;
 }
 
- /* .js-todoForm.Isvisible
+
+.showing
 {
-  display: block;
-}  */
+display: block;
+color: ivory;
+font-size: 60pt;
+text-align: center;
+margin: 15px;
+margin-block-end: 0.70em;
+text-shadow: 2px 3px 9px rgba(51, 51, 51, 0.3);
+}
 
 .hide
 {display: none;}
@@ -99,17 +108,6 @@ color: #e4af03;
 .todo-input[type=text]:focus
 {width: 40%;}
 
-.showing
-{
-display: block;
-color: ivory;
-font-size: 60pt;
-text-align: center;
-margin-block-start: 0.10em;
-/* margin-block-start: 0.30em; */
-margin-block-end: 0.80em;
-text-shadow: 2px 3px 9px rgba(51, 51, 51, 0.3);
-}
 
 .js-todoList
 {
@@ -128,7 +126,7 @@ text-shadow: 2px 3px 9px rgba(51, 51, 51, 0.3);
   margin-left: -20px;
   margin-right: 10px;
   font-size: 25px;
-  font-weight: 800;
+  font-weight: 500;
   color: rgba(244, 246, 252, 0.938);
 
 }
@@ -181,79 +179,84 @@ text-shadow: 2px 3px 9px rgba(51, 51, 51, 0.3);
   -moz-animation: bottomFadeOut 2s;
 }
 
+
+.weather-container
+{
+  color: snow;
+}
+
+
 .js-icon
 {
+  position: absolute;
   width: 50px;
   height: 45px;
-  position: absolute;
   vertical-align: center;
   top: 5px;
   right: 54px;
-  opacity: 0.8;
+  opacity: 1;
 
 }
 
 
 .js-weather
 {
+  position: absolute;
   text-align: right;
   font-weight:530;
-  position: absolute;
   top: 15px;
   right: 18px;
   font-size: 27px;
-  color: snow;
   opacity: 0.9;
 }
 
 
 .js-place
 {
-  text-align: right;
   position: absolute;
+  text-align: right;
   top: 47px;
   right: 18px;
   font-size: 17px;
-  color: snow;
   opacity: 0.8;
 }
+
+
+
 
 .search-icon
 {
   position: absolute;
-  top: 19px;
-  left: 97px;
+  top: 21.5px;
+  left: 67px;
   opacity: 0.7;
 }
 
 .search-icon:hover
 {
-  opacity: 2;
+  opacity: 3;
   
 }
 
 .js-search
 {
   opacity: 0;
-  height: auto;
+  height: 22.3px;
   position: absolute;
   top: 19px;
-  left: 98px;
+  left: 70px;
   outline: none;
   border: none;
   background: none;
-  width: 5%;
-  /* border-bottom: 1px solid rgba(255,255,255,0.7); */
-  
+  width: 4%;
+  border-bottom: 1px solid rgba(255,255,255,0.7);
 }
 
-
-.colored{border-bottom: 1px solid rgba(118, 11, 240, 0.952);}
 
 .js-search:hover
 {
   opacity: 0.8;
-  border-bottom: 1px solid rgba(255,255,255,0.7);
+  border-bottom: 1px solid rgba(243, 200, 9, 0.925);;
   transition: .5s;
   width: 10%;
 }
@@ -272,12 +275,7 @@ color: #e4af03;
   font-size: 15px;
   margin-bottom: 5px;
   background: none;
- 
 }
-
-
-
-
 
 
 .btn
@@ -291,31 +289,45 @@ color: #e4af03;
   display: none;
 }
 
-
-
- 
-.info {
+.js-setting
+{
   position: absolute;
   bottom: 18px;
   left: 18px;
-  font-size: 24px;
+  opacity: 0.7;
+}
+
+.js-setting:hover
+{
+  opacity: 3;
+}
+
+ 
+.info 
+{
+ 
+  position: absolute;
+  bottom:18px;
+  right: 3px;
+  margin-right: 13px;
+  display: inline-flex;
+  flex-wrap: wrap;
+
+
+}
+
+.info .text{
+  visibility: hidden;
+  width: 120px;
+  font-size: 16px;
+  font-weight:400;
   color: snow;
+  display: block;
   opacity: 0.7;
 
 }
 
-.info .text {
-  visibility: hidden;
-  width: 120px;
-  font-size: 15px;
-  font-weight:400;
-  color: snow;
-  text-align: center;
-  margin-left: 14px;
-
-}
-
-.info:hover .text {
+.info:hover .text{
   visibility: visible;
 }
 
@@ -330,23 +342,116 @@ delbtn:hover
  opacity: 1;
 }
 
-.js-search span{
-  color: white;
-  margin-right:0.5rem;  
+
+.dark
+{
+  background-image: url(https://source.unsplash.com/collection/12152250/1600x1100);
 }
 
-#btn{display: none;}
+
+.toggleContainer
+{
+  position: absolute;
+  top: 17px;
+  left: 18px;
+} 
+
+#toggle-off
+{
+opacity: 0.7;
+}
+
+#toggle-on
+{
+opacity: 0.7;
+}
+
+
+.js-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.534);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: rgb(12, 12, 11);
+  transform: translate(-50%, -50%);
+  background-color: rgba(253, 252, 252, 0.93);
+  padding: 1rem 1.5rem;
+  height: 34rem;
+  width: 54rem;
+  border-radius: 0.5rem;
+}
+
+
+.setting-header
+{
+  color: rgb(12, 12, 11);
+  font-size: 27px;
+  font-weight:800;
+
+}
+
+
+.close-btn {
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+}
+.close-btn:hover {
+  background-color: darkgray;
+}
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.hidden
+{
+  visibility: hidden;
+}
+
+.colored 
+{
+  color: blueviolet;
+}
+
+
+/* .js-search span{
+  color: white;
+  margin-right:0.3rem;  
+} */
+
+/* #btn{display: none;}
 
 label
 {
 display: inline-block;
-width: 55px;
-height: 29px;
+width: 53px;
+height: 27px;
 cursor: pointer;
 position: absolute;
-top: 19px;
+top: 20px;
 left: 18px;
-background-color: rgba(116, 211, 206, 0.589);
+background-color: rgba(104, 197, 174, 0.651);
 border-radius: 50px;
 }
 
@@ -354,22 +459,24 @@ label::before
 {
   content: '';
   display: block;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   left: 4px;
   bottom: 4px;
   position: absolute;
   background-color:  rgba(237, 237, 241, 0.884);
   transition: all .4s ease;
   border-radius: 50px;
-}
-/* input:checked + label {background-color: rgba(163, 162, 162, 0.582);} */
-input:checked + label::before{
-  transform: translateX(25px);
-}
+} */
 
-.light
+/* input:checked + label::before{
+  transform: translateX(25px);
+} */
+
+
+/* .light
 {
   background-image: url(https://source.unsplash.com/collection/12178065/1600x1000); 
   transition: color 0.3s ease;
-}
+} */
+

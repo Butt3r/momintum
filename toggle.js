@@ -1,36 +1,46 @@
-const toggle = document.querySelector("#btn");
-let lightMode = localStorage.getItem("lightMode");
+//const toggle = document.querySelector("#btn");
+const toggle = document.querySelector(".toggleContainer");
+const toggleOn = document.querySelector("#toggle-on");
+const toggleOff = document.querySelector("#toggle-off");
+let darkMode = localStorage.getItem("darkMode");
 
-const enableLightMode = () => 
+toggleOn.classList.add("hide");
+
+const enableDarkMode = () => 
 {
-    document.body.classList.toggle("light");
-    localStorage.setItem("lightMode", "enabled");
+    document.body.classList.toggle("dark");
+    localStorage.setItem("darkMode", "enabled");
+    toggleOff.classList.add("hide");
+    toggleOn.classList.remove("hide");
     
 };
 
-const disableLightMode  = () => 
+const disableDarkMode = () => 
 {
-    document.body.classList.remove("light");
-    localStorage.setItem("lightMode", null);
+    document.body.classList.remove("dark");
+    localStorage.setItem("darkMode", null);
+    toggleOff.classList.remove("hide");
+    toggleOn.classList.add("hide");
+    
 };
 
-if(lightMode === 'enabled')
+if(darkMode === 'enabled')
 {
-    enableLightMode();
+    enableDarkMode();
 }
 
 toggle.addEventListener("click", function(e){
-lightMode = localStorage.getItem("lightMode");
-if(lightMode !== "enabled")
+darkMode = localStorage.getItem("darkMode");
+if(darkMode !== "enabled")
 {
-    enableLightMode();
+    enableDarkMode();
 }
 else
 {
-    disableLightMode();
+    disableDarkMode();
 }
 });
 
 
-//toggle.addEventListener("click", function(e){
-//document.body.classList.toggle("light")
+
+
