@@ -25,7 +25,6 @@
             <ul class="js-todoList">
             </ul>
         
-            <div class="warn"></div>
             <h5 class="cheer"></h5>
         
 
@@ -52,10 +51,17 @@
                 <div class="content">
                     <span class="close-btn" onclick="Toggle()">&times;</span>
                     <hearder class="setting-header">Setting</hearder>
-                    <h4>what</h4>
+                    <p class = "modal-desc">Customize your dashboard now ✨</p>
+                    <h3>Options</h3>
+                    <h4>Time Format
+                        <button id = "tw" onclick="goTwentyFour()">24 Hours</button>
+                        <button id = "te" onclick="goTwelve()">12 Hours</button>
+                    </h4>
+                    <h4>Search Provider 
                     <button id = "g" onclick="goGoogle()">google </button>
-                <button id = "n" onclick="goNaver()">naver</button>
-                <button id = "d" onclick="goDaum()">daum</button>
+                    <button id = "n" onclick="goNaver()">naver</button>
+                    <button id = "d" onclick="goDaum()">daum</button>
+                    <h4>
                 </div>
             </div>
 
@@ -65,7 +71,7 @@
             <span class="js-place"></span>
             </div>
 
-
+ 
 
             <a href="https://www.google.com" class="btn" >
             <img src="images/g_logo3.png" alt="google"></a>  

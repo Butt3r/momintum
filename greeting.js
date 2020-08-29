@@ -36,7 +36,7 @@ function submitHandeler(event)
 } 
 function printGreeting(text)
 {
-
+    
     form.classList.remove(SHOWING_NAME);
     greeting.classList.add(SHOWING_NAME);
 
@@ -64,6 +64,8 @@ function printGreeting(text)
     {
     greeting.innerText = `${randomStr} ${text}.`;
     }
+
+    greeting.addEventListener('click', EditName);
     todo.classList.add('show');
 }
 
@@ -81,9 +83,18 @@ function getName()
     }
 }
 
+
+
+function EditName()
+{
+    todo.classList.add('hidden');
+    localStorage.removeItem(USER_LIST);
+    getName();
+    setTimeout(function(){window.location = window.location}, 1);
+}
+
 function init()
 {
-    
     getName();
 }
 

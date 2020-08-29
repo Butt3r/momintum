@@ -38,18 +38,6 @@ function printTodo(text)
 
 }
 
-
-// function warning()
-// {
-//     toDoWarn.classList.remove('hide');
-//     toDoWarn.innerText = "Wow, you’ve got a lot of passion!";
-//     toDoWarn.classList.remove('animation');
-//     setTimeout(function()
-//     {
-//         toDoWarn.classList.add('animation');
-//     }, 50)
-// }
-
 function submitHandeler(event)
 {
 
