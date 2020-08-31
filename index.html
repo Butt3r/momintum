@@ -4,6 +4,9 @@
         <meta charset="UTF-8"/>
         <title>momintum :: welcome</title>
         <link rel ="stylesheet" href="index.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <body>
             <div class="js-clock">
                 <h1 class="js-title"></h1>
@@ -12,19 +15,20 @@
  
           
             <form class="js-form form">
-                <input type="text" class = "name-input" maxlength = "7" placeholder= "Hello. What can i call you?">
+                <input type="text" class = "name-input" maxlength = "15" placeholder= "Hello. What can i call you?">
             </form>
            
             
             <h4 class="js-greetings greetings"></h4>
 
             <form class="js-todoForm">
-            <input type="text" class = "todo-input" maxlength = "30" placeholder="what is your main focus for today?"/>
+            <input type="text" class = "todo-input" onsubmit="return false" maxlength = "30" placeholder="what is your main focus for today?"/>
             </form>
 
+            <h5 class="today"></h5>
             <ul class="js-todoList">
             </ul>
-        
+    
             <h5 class="cheer"></h5>
         
 
@@ -71,7 +75,11 @@
             <span class="js-place"></span>
             </div>
 
- 
+            
+            <div class ="inline-todo">ToDo</div>
+            
+           
+           
 
             <a href="https://www.google.com" class="btn" >
             <img src="images/g_logo3.png" alt="google"></a>  
@@ -85,6 +93,7 @@
             <!-- <img src="images/google_icon.png" alt="goggle" onclick="goGoogle()";/> -->
         
 
+        
             <script src="clock.js"></script>
             <script src="greeting.js"></script>
             <script src="todo.js"></script>
@@ -92,6 +101,7 @@
             <script src="search.js"></script>
             <script src="toggle.js"></script>
             <script src="setting.js"></script>
+            <script src="taskCalender.js"></script>
 
             
 

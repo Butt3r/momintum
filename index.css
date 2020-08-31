@@ -1,4 +1,3 @@
-/* body { background-color:#1f262e;} */
 body{
   /* background-image: url(https://source.unsplash.com/collection/1401382/1600x1000);  */
   /* background-image: url(https://source.unsplash.com/collection/12152250/1800x1000);  */
@@ -7,13 +6,12 @@ body{
   background-position: center;
   background-repeat: no-repeat;
   min-height: 80vh;
- 
+  color: ivory;
 }
 
 
 h1
 {
-  color: ivory;
 /* color: #21cf95f1; */
 font-size: 124pt;
 text-align: center;
@@ -40,7 +38,6 @@ display: none;
 .showing
 {
 display: block;
-color: ivory;
 font-size: 60pt;
 text-align: center;
 margin: 15px;
@@ -65,7 +62,7 @@ text-shadow: 2px 3px 9px rgba(51, 51, 51, 0.3);
   margin-bottom: 10px;
   text-align: center;
   background: none;
-  border-bottom: 1px solid rgba(255,255,255,0.9);
+  border-bottom: 1px solid rgba(255,255,255,0.7);
 }
 
 .name-input::placeholder
@@ -148,13 +145,13 @@ color: #e4af03;
 }
 
 
-.warn
+.today
 {
-  font-weight:500;
-  font-size: 19px;
+  font-weight:800;
+  font-size: 20px;
+
+  margin-right: 10px;
   text-align: center;
-  color: mediumaquamarine;
-  opacity: 0;
 }
 
 
@@ -182,7 +179,7 @@ color: #e4af03;
 
 .weather-container
 {
-  color: snow;
+  opacity: 1;
 }
 
 
@@ -194,7 +191,6 @@ color: #e4af03;
   vertical-align: center;
   top: 5px;
   right: 54px;
-  opacity: 1;
 
 }
 
@@ -292,7 +288,7 @@ color: #e4af03;
 .js-setting
 {
   position: absolute;
-  bottom: 18px;
+  bottom: 20px;
   left: 18px;
   opacity: 0.7;
   transition: all ease 0.5s;
@@ -302,16 +298,47 @@ color: #e4af03;
 .js-setting:hover
 {
   opacity: 3;
-  transform: rotate(40deg);
+  transform: rotate(25deg);
 }
 
+.inline-todo
+{
+  position: absolute;
+  bottom: 20.5px;
+  right: 18px;
+  font-weight:570;
+  color: snow;
+  opacity: 0.7;
+}
+
+.inline-todo:hover
+{
+  opacity: 2;
+}
+
+.js-calender
+{
+  position: absolute;
+  right: 58px;
+  opacity: 0;
+}
+
+.show-calender
+{
+  opacity: 1;
+}
+
+/* .js-container
+{
+  
+} */
  
 .info 
 {
  
   position: absolute;
-  bottom:18px;
-  right: 3px;
+  bottom:20.5px;
+  right: 53px;
   margin-right: 13px;
   display: inline-flex;
   flex-wrap: wrap;
@@ -342,13 +369,7 @@ opacity: 0;
 
 delbtn:hover
 {
- opacity: 1;
-}
-
-
-.dark
-{
-  background-image: url(https://source.unsplash.com/collection/12152250/1600x1100);
+ opacity: 3;
 }
 
 
@@ -435,6 +456,12 @@ opacity: 0.7;
 .colored 
 {
   color: rgb(171, 16, 243);
+}
+
+.dark
+{
+  /* background-image: url(https://source.unsplash.com/collection/12152250/1600x1100); */
+  background-image: url(https://source.unsplash.com/collection/12236974/1600x1100);
 }
 
 

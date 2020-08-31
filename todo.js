@@ -1,11 +1,11 @@
 const toDoForm = document.querySelector(".js-todoForm"),
 toDoInput = toDoForm.querySelector(".todo-input"),
-toDoList = document.querySelector(".js-todoList"),
-toDoWarn = document.querySelector(".warn");
+toDoList = document.querySelector(".js-todoList");
 
 
 
 const TODOS_LIST = 'toDos';
+const today = document.querySelector(".today");
 let toDosArr = [];
 
 
@@ -18,9 +18,10 @@ function printTodo(text)
     const delBtn = document.createElement("delbtn");
     const span = document.createElement("span");
     const toDoId = toDosArr.length + 1;
-
     
-    delBtn.innerHTML= "🚀";
+    //delBtn.innerHTML= "";
+    var src = "<img src=\'images/checkmark.png\'>";
+    delBtn.innerHTML= src;
     delBtn.addEventListener("click", deleteTodo);
     span.innerText = text;
     li.appendChild(span);
@@ -35,19 +36,25 @@ function printTodo(text)
     saveTodos();
     }
 
+    if(toDosArr.length == 3)
+    {
+        toDoInput.classList.add('hide');
+        today.classList.remove('hide');
+        today.innerText = "TODAY";
+    }
+   
+
 
 }
 
 function submitHandeler(event)
 {
-
     event.preventDefault();
 
-    if(toDosArr.length == 3)
-    {
-        alert("Wow, you've got a lot of passion!")
-        //warning();
-    }
+    // if(toDosArr.length == 3)
+    // {
+    //     alert("Wow, you've got a lot of passion!")
+    // }
 
     if(toDosArr.length < 3)
     {
@@ -97,6 +104,8 @@ function deleteTodo(event)
 
     console.log(clean);
     toDosArr = clean;
+    toDoInput.classList.remove('hide');
+    today.classList.add('hide');
     saveTodos();
     popup();
    
@@ -107,7 +116,6 @@ function deleteTodo(event)
 
 function popup()
 {
-    toDoWarn.classList.add('hide');
     const obj = document.querySelector(".cheer");
     obj.innerText = "well done! 🌟";
     obj.classList.remove('animation');
@@ -116,6 +124,7 @@ function popup()
         obj.classList.add('animation');
     }, 10)
 }
+
 
 
 function init()

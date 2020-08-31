@@ -8,7 +8,6 @@ const clockContainer = document.querySelector(".js-clock"),
       let twelve = localStorage.getItem("twelve");
 
 
-
     
 function goTwentyFour()
 {
@@ -33,11 +32,11 @@ function setTwentyFour()
 {
     
     var date = new Date();
-    var seconds = date.getSeconds();
     var minutes = date.getMinutes();
     var hours = date.getHours();
+     //var seconds = date.getSeconds();
 
-    clockTitle.innerText = `${hours < 10 ? `0${hours}`: hours}:${minutes < 10 ? `0${minutes}`: minutes}:${seconds < 10 ? `0${seconds}`: seconds}`;
+    clockTitle.innerText = `${hours < 10 ? `0${hours}`: hours}:${minutes < 10 ? `0${minutes}`: minutes}`;
 }
 
 function setTwelve()
@@ -45,11 +44,22 @@ function setTwelve()
     var d = new Date();
     var hours = d.getHours();
     var min = d.getMinutes();
-    var sec = d.getSeconds();
+    //var sec = d.getSeconds();
 
     hours = ((hours + 11) % 12 + 1);
 
-    clockTitle.innerText = `${hours}:${min < 10 ? `0${min}`: min}:${sec < 10 ? `0${sec}`: sec}`;
+    clockTitle.innerText = `${hours}:${min < 10 ? `0${min}`: min}`;
+
+}
+
+function setDefault()
+{
+   
+    if(twenty === null || twelve === null)
+    {
+        teFormat.classList.add('colored');
+        localStorage.setItem("twelve", "enabled");
+    }         
 
 }
 
@@ -85,6 +95,7 @@ function paintColored()
 
 function init()
 {
+    setDefault();
     paintColored();
     getTimeFormat();
     setInterval(getTimeFormat, 1000);

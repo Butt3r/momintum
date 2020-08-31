@@ -33,6 +33,7 @@ function submitHandeler(event)
         printGreeting(currentVal);
         saveName(currentVal);
     }
+
 } 
 function printGreeting(text)
 {
@@ -46,7 +47,7 @@ function printGreeting(text)
     const greetings = ["Hello,", "Hi,", "Welcome home", "Howdy!", "How's your day?", "What's up?", "Good to see you,", "What's new?", "I am here for you,", "Have a good day"];
     const greetings2 = ["Good morning", "Good afternoon", "Good evening"];
     const randomStr = greetings[Math.floor(Math.random() * greetings.length)];
-    console.log("random month =>", randomStr);
+    console.log("random greet =>", randomStr);
 
     if(hours > 7 && hours < 12)
     {
@@ -69,7 +70,7 @@ function printGreeting(text)
     todo.classList.add('show');
 }
 
-function getName()
+function loadName()
 {
     const currentUser = localStorage.getItem(USER_LIST);
    
@@ -84,18 +85,22 @@ function getName()
 }
 
 
-
 function EditName()
 {
-    todo.classList.add('hidden');
     localStorage.removeItem(USER_LIST);
-    getName();
-    setTimeout(function(){window.location = window.location}, 1);
+    loadName();
 }
+
 
 function init()
 {
-    getName();
+    const currentUser = loadName();
+    if(!currentUser)
+    {
+        setName();
+    }
+    
+    loadName();
 }
 
 
