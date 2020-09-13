@@ -5,20 +5,25 @@
         <title>momintum :: welcome</title>
         <link rel ="stylesheet" href="index.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <!-- <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_green.css"> -->
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <body>
+           
+            <div class = "bg-overlay show">
+
             <div class="js-clock">
                 <h1 class="js-title"></h1>
                 <!-- <h1>00:00</h1> -->
             </div>
- 
+        
           
             <form class="js-form form">
-                <input type="text" class = "name-input" maxlength = "15" placeholder= "Hello. What can i call you?">
+                <input type="text" class = "name-input" maxlength = "15" placeholder= "What should I call you">
             </form>
            
-            
+           
+
             <h4 class="js-greetings greetings"></h4>
 
             <form class="js-todoForm">
@@ -31,16 +36,12 @@
     
             <h5 class="cheer"></h5>
         
-
+     
             <form class="js-search">
             <input type="text" class="search-input">
             </form>
             
 
-            <!-- <button class="js-toggle"></button> -->
-            <!-- <input type="checkbox" id="btn">
-            <label for="btn" id="state"></label> -->
-          
             <div class = "toggleContainer">
             <i id = "toggle-off">
             <img src="images/toggle-off.png"></i>
@@ -52,7 +53,7 @@
             <img src="images/gear_icon.png" alt="setting" />
             </div>
             <div class="js-modal">
-                <div class="content">
+                <div class="modal-content">
                     <span class="close-btn" onclick="Toggle()">&times;</span>
                     <hearder class="setting-header">Setting</hearder>
                     <p class = "modal-desc">Customize your dashboard now ✨</p>
@@ -76,23 +77,40 @@
             </div>
 
             
-            <div class ="inline-todo">ToDo</div>
-            
-           
+            <div class ="todo-trigger">Slack</div>
+            <div class="todo-container" style = "height: auto; width: 320px; overflow-y: hidden;">
+                    <header class="header">POST</header>
+                    <div class="todo-wrapper>" style="min-height: 152px; max-height: 152px;">
+                        <ol class= "is-empty">
+                            <p class = "todo-emptyTitle">Let's get started</p>
+                            <div class = "todo-emptyDesc">push the button</div>
+                            <button class="todo-btn">New todo</button>
+                        </ol>
+                        <footer class = "footer-input" style="visibility: visible;">
+                            <div class="slack-Container">
+                                <input type = "date"  name="duedate" id="due-date" placeholder= "date">
+                                <input type = "text" name="todo" id = "inline-input" maxlength = "20" placeholder= "message">
+                            </div> 
+                            <button onclick="submitHandler()">SEND</button>
+                        </footer>
+                        <div class = "list-container">
+                            <ul class="inline-todoList"></ul>
+                        </div>
+                </div>
+            </div>
+       
            
 
             <a href="https://www.google.com" class="btn" >
-            <img src="images/g_logo3.png" alt="google"></a>  
+            <img src="images/google_icon.png" alt="google"></a>  
             <div class = "search-icon">
-            <img src="images/serach_icon5.png"></div>
+            <img src="images/serach_icon.png"></div>
             <div class="info">
                 <span class="text">made by Butt3r</span>
                 🧈
             </div>
-
-            <!-- <img src="images/google_icon.png" alt="goggle" onclick="goGoogle()";/> -->
         
-
+            <!-- <img src="images/google_icon.png" alt="goggle" onclick="goGoogle()";/> -->
         
             <script src="clock.js"></script>
             <script src="greeting.js"></script>
@@ -101,11 +119,11 @@
             <script src="search.js"></script>
             <script src="toggle.js"></script>
             <script src="setting.js"></script>
-            <script src="taskCalender.js"></script>
+            <script src="flatpickr.js"></script>
+            <script src="slack.js"></script>
 
             
-
-
+        </div>
         </body>
     </head>
 </html>

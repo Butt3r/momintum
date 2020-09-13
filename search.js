@@ -1,12 +1,12 @@
 // 테스트용 코드라 엄청 더러움..! 나중에 다시 리팩토링 필수!
 
 
-const search = document.querySelector(".js-search");
-const searchInput = search.querySelector("input");
-const icon = document.querySelector(".search-icon");
-const goggle = document.querySelector("#g");
-const naver = document.querySelector("#n");
-const daum = document.querySelector("#d");
+const search = document.querySelector(".js-search"),
+      searchInput = search.querySelector("input"),
+      icon = document.querySelector(".search-icon"),
+      goggle = document.querySelector("#g"),
+      naver = document.querySelector("#n"),
+      daum = document.querySelector("#d");
 
 
 let gMode = localStorage.getItem("gMode");

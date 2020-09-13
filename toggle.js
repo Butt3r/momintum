@@ -1,9 +1,9 @@
 //const toggle = document.querySelector("#btn");
-const toggle = document.querySelector(".toggleContainer");
-const toggleOn = document.querySelector("#toggle-on");
-const toggleOff = document.querySelector("#toggle-off");
-let darkMode = localStorage.getItem("darkMode");
+const toggle = document.querySelector(".toggleContainer"),
+      toggleOn = document.querySelector("#toggle-on"),
+      toggleOff = document.querySelector("#toggle-off");
 
+let darkMode = localStorage.getItem("darkMode");
 toggleOn.classList.add("hide");
 
 const enableDarkMode = () => 

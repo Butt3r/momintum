@@ -1,6 +1,6 @@
 const toDoForm = document.querySelector(".js-todoForm"),
-toDoInput = toDoForm.querySelector(".todo-input"),
-toDoList = document.querySelector(".js-todoList");
+      toDoInput = toDoForm.querySelector(".todo-input"),
+      toDoList = document.querySelector(".js-todoList");
 
 
 
@@ -130,7 +130,7 @@ function popup()
 function init()
 {
     loadTodos();
-    toDoForm.addEventListener("submit", submitHandeler)
+    toDoForm.addEventListener("submit", submitHandeler);
 }
 
 init();
