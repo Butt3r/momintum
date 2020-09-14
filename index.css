@@ -16,7 +16,7 @@ h1
 color: rgb(255, 255, 255);
 font-size: 124pt;
 text-align: center;
-margin-top: 0.90em;
+margin-top: 1.20em;
 margin-block-end: 0.10em;
 text-shadow: 2px 3px 9px rgba(51, 51, 51, 0.2);
 }
@@ -93,15 +93,12 @@ text-shadow: 2px 3px 9px rgba(51, 51, 51, 0.3);
 .todo-input
 {
   position: relative;
-  /* background-color: #29323d; */
   font-weight:500;
   font-size: 18px;
   border-radius: 5px;
   line-height: 22px;
-  background-color: rgba( 255, 255, 255, 0.2 );
-  /* background-color: transparent; */
-    border:2px solid rgba(255, 255, 255, 0.4);
-  /* border:2px solid #2b333d; */
+  background-color: rgba( 255, 255, 255, 0.2);
+  border:2px solid rgba(255, 255, 255, 0.4);
   padding: 13px;
   margin-bottom: 10px;
   width:100%;
@@ -111,7 +108,7 @@ text-shadow: 2px 3px 9px rgba(51, 51, 51, 0.3);
 }
 
 input::placeholder
-{color: ivory; opacity: 10;}
+{color: ivory; opacity: 1;}
 
 
 .todo-input[type=text]
@@ -143,7 +140,7 @@ color: #e4af03;
   margin-right: 10px;
   font-size: 25px;
   font-weight: 500;
-  color: rgba(244, 246, 252, 0.938);
+  color: rgba(244, 246, 252, 1);
 
 }
 
@@ -169,7 +166,7 @@ color: #e4af03;
   font-weight:800;
   font-size: 20px;
 
-  margin-right: 10px;
+  margin-left: -4px;
   text-align: center;
 }
 
@@ -307,7 +304,7 @@ color: #e4af03;
 .js-setting
 {
   position: absolute;
-  bottom: 20px;
+  bottom: 20.2px;
   left: 18px;
   opacity: 0.7;
   transition: all ease 0.5s;
@@ -545,6 +542,48 @@ opacity: 0.7;
   color: ivory;
   background-color: rgb(171, 16, 243);
 }
+
+
+.quote-container
+{
+  position: absolute;
+  bottom: 2%;
+  width: 50%;
+  margin-left: 25%;
+  text-align: center;
+  font-size: 17px;
+  opacity: 0.9;
+}
+
+.quote-container:hover 
+{
+  opacity: 1;
+  transform: translateY(-15px);
+  transition: transform 0.70s;
+ 
+}
+
+.quote-container:hover .src
+{
+  transform: translateY(47px);
+  transition: transform 0.45s, opacity 0.75s 0s;
+  opacity: 0.8;
+}
+
+.src
+{
+  margin: 1;
+  font-size: 15px;
+  opacity: 0;
+}
+
+
+
+
+
+
+
+
 .show-modal {
   opacity: 1;
   visibility: visible;
