@@ -57,18 +57,44 @@
                     <span class="close-btn" onclick="Toggle()">&times;</span>
                     <hearder class="setting-header">Setting</hearder>
                     <p class = "modal-desc">Customize your dashboard now ✨</p>
+                    <br>
                     <h3>Options</h3>
+                    <hr>
                     <h4>Time Format
                         <button id = "tw" onclick="goTwentyFour()">24 Hours</button>
                         <button id = "te" onclick="goTwelve()">12 Hours</button>
                     </h4>
-                    <h4>Search Provider 
-                    <button id = "g" onclick="goGoogle()">google </button>
-                    <button id = "n" onclick="goNaver()">naver</button>
-                    <button id = "d" onclick="goDaum()">daum</button>
+                    <h4 style="line-height:50%;">Search Provider 
+                        <button id = "g" onclick="goGoogle()">google </button>
+                        <button id = "n" onclick="goNaver()">naver</button>
+                        <button id = "d" onclick="goDaum()">daum</button>
                     <h4>
+                        <br>
+                    <h3 style="line-height:1%;">About</h3>
+                    <hr>
+                    <h4 class = "about" style="line-height:1%; margin-top: 35px;">Momentum clone</h4>
+                    <p class = "desc" sytle="line-height:50%; margin: 0">All-in-one personal dashboard</p>
+                    <br>
+                    <h5 class = "myInfo" style="line-height:1%; margin-top: 50px;">@Butt3r</h5>
+                    <p style="line-height:50%;">learn <strong>Full-stack</strong> Web Development</p>
+                   
+                    <a class = "git" style="margin-top: 5px;" href="https://github.com/Butt3r">
+                        <img src="images/github-.png"></a>
+                    <a class = "mail" style="margin-top: 6px; margin-left: 30px" href="mailto:oos9596@gmail.com">
+                        <img src="images/mail-.png"></a>
+                    <a class = "momentum" style="margin-top: 6px; margin-left: 60px" href="https://momentumdash.com/">
+                        <img src="images/momentum-.png"></a>
+                   
+                    
                 </div>
             </div>
+
+            <!-- <a href="https://www.google.com" class="btn" >
+                <a href="https://www.google.com" class="btn" >
+                <img src="images/g_logo3.png" alt="google"></a>   -->
+
+
+
 
             <div class="weather-container">
             <img class="js-icon" />
@@ -88,10 +114,10 @@
                         </ol>
                         <footer class = "footer-input" style="visibility: visible;">
                             <div class="slack-Container">
-                                <input type = "date"  name="duedate" id="due-date" placeholder= "date">
+                                <input type = "date"  name="duedate" id="due-date" placeholder= "duedate">
                                 <input type = "text" name="todo" id = "inline-input" maxlength = "20" placeholder= "message">
                             </div> 
-                            <button onclick="submitHandler()">SEND</button>
+                            <button class = "send-btn" onclick="submitHandler()">SEND</button>
                         </footer>
                         <div class = "list-container">
                             <ul class="inline-todoList"></ul>
@@ -104,8 +130,7 @@
                <div class="js-quote"></div>
            </div>
 
-            <a href="https://www.google.com" class="btn" >
-            <img src="images/google_icon.png" alt="google"></a>  
+        
             <div class = "search-icon">
             <img src="images/serach_icon.png"></div>
             <div class="info">

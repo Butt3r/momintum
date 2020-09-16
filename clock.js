@@ -41,15 +41,20 @@ function setTwentyFour()
 
 function setTwelve()
 {
+    const AmPm = document.createElement("AmPm");
+    var ampm = hours >= 12 ? 'AM' : 'PM';
+    AmPm.innerHTML = ampm;
+
     var d = new Date();
     var hours = d.getHours();
     var min = d.getMinutes();
+    
     //var sec = d.getSeconds();
 
     hours = ((hours + 11) % 12 + 1);
 
     clockTitle.innerText = `${hours}:${min < 10 ? `0${min}`: min}`;
-
+    clockTitle.appendChild(AmPm);
 }
 
 function setDefault()

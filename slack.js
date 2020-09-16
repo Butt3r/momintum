@@ -7,7 +7,7 @@ function submitHandler()
 {
     var dueDate = dueDateInput.value;
     var toDo = todoInput.value;
-    var link = 'https://hooks.slack.com/services/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';
+    var link = 'https://hooks.slack.com/services/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';
 
     
     var xhr = new XMLHttpRequest();

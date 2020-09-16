@@ -1,26 +1,59 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
 body{
   /* background-image: url(https://source.unsplash.com/collection/1401382/1600x1000);  */
   /* background-image: url(https://source.unsplash.com/collection/12152250/1800x1000);  */
-  background-image: url(https://source.unsplash.com/collection/12178065/1600x1000);
+  background-image: url(https://source.unsplash.com/collection/220381/1600x1000);
+  /* 142773 */
   background-color: transparent;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 90vh;
   color: snow;
+  font-family: sans-serif;
 }
 
 
 h1
 {
+font: 700 8rem Arial,sans-serif;
 color: rgb(255, 255, 255);
-font-size: 124pt;
+/* font-size: 124pt; */
 text-align: center;
-margin-top: 1.20em;
+margin-top: 2.3em;
 margin-block-end: 0.10em;
 text-shadow: 2px 3px 9px rgba(51, 51, 51, 0.2);
 }
 
+h1:hover AmPm
+{
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  display: inline-block;
+}
+
+
+AmPm
+{
+  font-size: 17px;
+  font-weight: 600;
+  margin-left: 15px;
+  text-shadow: 2px 3px 9px rgba(51, 51, 51, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+ 
+
+}
+
+
+.form,
+.greetings
+{display: none;}
+
+/* background overlay area */
 
 .bg-overlay.show
 {
@@ -35,15 +68,13 @@ text-shadow: 2px 3px 9px rgba(51, 51, 51, 0.2);
   right: 0;
   bottom: 0;
   background-size: 100% 100%;
-  background-image: url(images/overlay-vignette-test4.png);
+  background-image: url(images/overlay-vignette4.png);
   opacity: 0;
 
 }
 
 
-.form,
-.greetings
-{display: none;}
+/* todo area */
 
 .js-todoForm
 { 
@@ -57,12 +88,15 @@ display: none;
 .showing
 {
 display: block;
-font-size: 60pt;
+font: 700 4.7rem Arial,sans-serif;
+/* font-size: 55pt; */
 text-align: center;
 margin: 15px;
 margin-block-end: 0.70em;
 text-shadow: 2px 3px 9px rgba(51, 51, 51, 0.3);
 }
+
+
 
 .hide
 {display: none;}
@@ -144,6 +178,15 @@ color: #e4af03;
 
 }
 
+delbtn
+{
+opacity: 0;
+}
+
+delbtn:hover
+{
+ opacity: 3;
+}
 
 @keyframes bottomFadeOut {
   0% {
@@ -165,7 +208,7 @@ color: #e4af03;
 {
   font-weight:800;
   font-size: 20px;
-
+  margin-top: 40px;
   margin-left: -4px;
   text-align: center;
 }
@@ -193,6 +236,8 @@ color: #e4af03;
 }
 
 
+/* weather area */
+
 .weather-container
 {
   opacity: 1;
@@ -219,7 +264,7 @@ color: #e4af03;
   top: 15px;
   right: 18px;
   font-size: 27px;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 
@@ -230,11 +275,11 @@ color: #e4af03;
   top: 47px;
   right: 18px;
   font-size: 17px;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 
-
+/* search area */
 
 .search-icon
 {
@@ -268,7 +313,7 @@ color: #e4af03;
 .js-search:hover
 {
   opacity: 0.8;
-  border-bottom: 1px solid rgba(243, 200, 9, 0.925);;
+  border-bottom: 1px solid rgba(255,255,255,0.7);
   transition: .5s;
   width: 10%;
 }
@@ -290,33 +335,8 @@ color: #e4af03;
 }
 
 
-.btn
-{
-  width: 15px;
-  height: 15px;
-  position: absolute;
-  top: 4px;
-  left: 5px;
-  opacity: 0.8;
-  display: none;
-}
 
-.js-setting
-{
-  position: absolute;
-  bottom: 20.2px;
-  left: 18px;
-  opacity: 0.7;
-  transition: all ease 0.5s;
-  
-}
-
-.js-setting:hover
-{
-  opacity: 5;
-  transform: rotate(25deg);
-}
-
+/* info area */
  
 .info 
 {
@@ -327,6 +347,7 @@ color: #e4af03;
   margin-right: 13px;
   display: inline-flex;
   flex-wrap: wrap;
+  visibility: hidden;
 
 
 }
@@ -354,16 +375,7 @@ color: #e4af03;
 }
 
 
-delbtn
-{
-opacity: 0;
-}
-
-delbtn:hover
-{
- opacity: 3;
-}
-
+/* dark mode area */
 
 .toggleContainer
 {
@@ -381,6 +393,9 @@ opacity: 0.7;
 {
 opacity: 0.7;
 }
+
+
+/* slack todo area */
 
 .todo-trigger
 {
@@ -417,6 +432,7 @@ opacity: 0.7;
   margin: 20px;
 
 }
+
 
 .todo-wrapper
 {
@@ -492,6 +508,32 @@ opacity: 0.7;
   color: rgba(244, 246, 252, 0.938);
 }
 
+.todo-emptyTitle
+{
+  font-size: 16px;
+  color: snow;
+}
+
+
+/* setting area */
+
+.js-setting
+{
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  opacity: 0.7;
+  transition: all ease 0.5s;
+  
+}
+
+.js-setting:hover
+{
+  opacity: 5;
+  transform: rotate(25deg);
+}
+
+
 .js-modal {
   position: fixed;
   left: 0;
@@ -515,9 +557,18 @@ opacity: 0.7;
   transform: translate(-50%, -50%);
   background-color: rgba(253, 252, 252, 1);
   padding: 1rem 1.5rem;
+  /* width: 54rem;  */
   height: 34rem;
-  width: 54rem;
+  width: 35rem;
   border-radius: 0.5rem;
+}
+
+.modal-desc
+{
+  color: rgba(97, 95, 95, 0.863);
+  font-size: 15px;
+  margin: 1px;
+  
 }
 
 
@@ -543,21 +594,29 @@ opacity: 0.7;
   background-color: rgb(171, 16, 243);
 }
 
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+/* quote area */
 
 .quote-container
 {
   position: absolute;
-  bottom: 2%;
+  bottom: 2.5%;
   width: 50%;
   margin-left: 25%;
   text-align: center;
   font-size: 17px;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .quote-container:hover 
 {
-  opacity: 1;
+  opacity: 3;
   transform: translateY(-15px);
   transition: transform 0.70s;
  
@@ -566,7 +625,7 @@ opacity: 0.7;
 .quote-container:hover .src
 {
   transform: translateY(47px);
-  transition: transform 0.45s, opacity 0.75s 0s;
+  transition: transform 0.40s, opacity 0.80s 0s;
   opacity: 0.8;
 }
 
@@ -583,17 +642,17 @@ opacity: 0.7;
 
 
 
+/* etc func */
 
-.show-modal {
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1.0);
-  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-}
 
 .hidden
 {
   visibility: hidden;
+}
+
+.visible
+{
+  visibility: visible;
 }
 
 .colored 
@@ -607,4 +666,67 @@ opacity: 0.7;
   background-image: url(https://source.unsplash.com/collection/12236974/1600x1000);
 }
 
+
+hr
+{
+  width: 555px;
+  margin-left: 0;
+  text-align: left;
+  border-top: 1px solid rgb(222, 227, 228);
+}
+
+
+button
+{
+  
+  background-color: transparent;
+  border: 1px solid rgb(189, 186, 186);
+  border-radius: 3px;
+  font-weight: 500;
+  
+}
+
+button:focus {outline:0;}
+
+.todo-btn,
+.send-btn
+{
+  color: aliceblue;
+  background-color: rgba(121, 123, 128, 0.753);
+  border: none;
+}
+
+.git,
+.momentum,
+.mail 
+{
+  position: absolute;
+  opacity: 0.6;
+}
+
+
+p
+{
+  font-size: 13px;
+  color: rgba(97, 95, 95, 0.863);
+  /* color: rgba(97, 95, 95, 0.904); */
+}
+
+
+.myInfo
+{
+  color: rgba(70, 71, 71, 0.904);
+}
+
+.about
+{
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.966);
+ 
+}
+
+.desc
+{
+  color: rgba(0, 0, 0, 0.815);
+}
 
