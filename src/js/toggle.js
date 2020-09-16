@@ -1,4 +1,3 @@
-//const toggle = document.querySelector("#btn");
 const toggle = document.querySelector(".toggleContainer"),
       toggleOn = document.querySelector("#toggle-on"),
       toggleOff = document.querySelector("#toggle-off");

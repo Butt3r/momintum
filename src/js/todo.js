@@ -19,8 +19,7 @@ function printTodo(text)
     const span = document.createElement("span");
     const toDoId = toDosArr.length + 1;
     
-    //delBtn.innerHTML= "";
-    var src = "<img src=\'images/checkmark.png\'>";
+    var src = "<img src=\'asset/images/checkmark.png\'>";
     delBtn.innerHTML= src;
     delBtn.addEventListener("click", deleteTodo);
     span.innerText = text;
@@ -50,11 +49,6 @@ function printTodo(text)
 function submitHandeler(event)
 {
     event.preventDefault();
-
-    // if(toDosArr.length == 3)
-    // {
-    //     alert("Wow, you've got a lot of passion!")
-    // }
 
     if(toDosArr.length < 3)
     {

@@ -24,7 +24,7 @@ function goGoogle()
     localStorage.setItem("gMode", "enabled");
     localStorage.setItem("nMode", null);
     localStorage.setItem("dMode", null);
-    //history.go(0);
+   
 }
 
 function goNaver()
@@ -35,8 +35,7 @@ function goNaver()
     localStorage.setItem("nMode", "enabled");
     localStorage.setItem("gMode", null);
     localStorage.setItem("dMode", null);
-    //history.go(0);
-    
+   
 }
 
 function goDaum()
@@ -47,7 +46,7 @@ function goDaum()
     localStorage.setItem("dMode", "enabled");
     localStorage.setItem("gMode", null);
     localStorage.setItem("nMode", null);
-    //history.go(0);
+   
     
 }
 

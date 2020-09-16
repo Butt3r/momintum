@@ -41,15 +41,15 @@ function setTwentyFour()
 
 function setTwelve()
 {
-    const AmPm = document.createElement("AmPm");
-    var ampm = hours >= 12 ? 'AM' : 'PM';
-    AmPm.innerHTML = ampm;
 
     var d = new Date();
     var hours = d.getHours();
     var min = d.getMinutes();
     
     //var sec = d.getSeconds();
+    const AmPm = document.createElement("AmPm");
+    var ampm = hours < 12 ? 'AM' : 'PM';
+    AmPm.innerHTML = ampm;
 
     hours = ((hours + 11) % 12 + 1);
 
