@@ -3,7 +3,7 @@ const dueDateInput = document.querySelector("#due-date"),
       slackCon = document.querySelector(".slack-Container");
 
 
-const Slackurl = 'https://hooks.slack.com/services/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'
+const Slackurl = 'https://hooks.slack.com/services/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'
 const user = localStorage.getItem("currentUser");
 
 function submitHandler()
