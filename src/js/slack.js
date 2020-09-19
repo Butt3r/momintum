@@ -3,21 +3,25 @@ const dueDateInput = document.querySelector("#due-date"),
       slackCon = document.querySelector(".slack-Container");
 
 
+const Slackurl = 'https://hooks.slack.com/services/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'
+const user = localStorage.getItem("currentUser");
+
 function submitHandler()
 {
     var dueDate = dueDateInput.value;
     var toDo = todoInput.value;
-    var link = 'https://hooks.slack.com/services/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';
 
     
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", link, true);
+    xhr.open("POST", Slackurl, true);
 
     xhr.onreadystatechange = function()
     {
         if(this.readyState === XMLHttpRequest.DONE && this.status === 200)
         {
             console.log("request done");
+            console.log(user);
+            
             
         }
 
@@ -41,7 +45,17 @@ function submitHandler()
                 "fields": [
                     {
                         "type": "mrkdwn",
-                        "text": "*dueDate *\n" + dueDate + "\n\n" + "*todo *\n" + toDo + "\n"
+                        "text": `*dueDate *\n ${dueDate} \n\n *todo *\n ${toDo} \n`
+                    }
+                ]
+            },
+            {
+                "type": "context",
+                "elements": [
+                    {
+                        "type": "plain_text",
+                        "text": `sent by ${user}`,
+                        "emoji": true
                     }
                 ]
             },

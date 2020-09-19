@@ -1,13 +1,14 @@
 const toggle = document.querySelector(".toggleContainer"),
       toggleOn = document.querySelector("#toggle-on"),
-      toggleOff = document.querySelector("#toggle-off");
+      toggleOff = document.querySelector("#toggle-off"),
+      bg = document.querySelector(".background");
 
 let darkMode = localStorage.getItem("darkMode");
 toggleOn.classList.add("hide");
 
 const enableDarkMode = () => 
 {
-    document.body.classList.toggle("dark");
+    bg.classList.toggle("dark");
     localStorage.setItem("darkMode", "enabled");
     toggleOff.classList.add("hide");
     toggleOn.classList.remove("hide");
@@ -16,7 +17,7 @@ const enableDarkMode = () =>
 
 const disableDarkMode = () => 
 {
-    document.body.classList.remove("dark");
+    bg.classList.remove("dark");
     localStorage.setItem("darkMode", null);
     toggleOff.classList.remove("hide");
     toggleOn.classList.add("hide");

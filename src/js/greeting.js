@@ -1,7 +1,8 @@
 const form = document.querySelector(".js-form"),
       input = form.querySelector(".name-input"),
       greeting = document.querySelector(".js-greetings"),
-      todo = document.querySelector(".js-todoForm");
+      todo = document.querySelector(".js-todoForm"),
+      askName = document.querySelector(".ask-name");
     
      
 const USER_LIST = "currentUser",
@@ -17,7 +18,7 @@ function saveName(text)
 
 function setName()
 {
-
+    askName.classList.remove('hide');
     greeting.classList.remove(SHOWING_NAME);
     form.classList.add(SHOWING_NAME);
     form.addEventListener("submit",  submitHandeler);
@@ -38,6 +39,7 @@ function submitHandeler(event)
 function printGreeting(text)
 {
     
+    askName.classList.add('hide');
     form.classList.remove(SHOWING_NAME);
     greeting.classList.add(SHOWING_NAME);
 

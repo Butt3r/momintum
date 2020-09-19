@@ -19,8 +19,8 @@ function printTodo(text)
     const span = document.createElement("span");
     const toDoId = toDosArr.length + 1;
     
-    var src = "<img src=\'asset/images/checkmark.png\'>";
-    delBtn.innerHTML= src;
+    // var src = "<img src=\'asset/images/checkmark.png\'>";
+    delBtn.innerHTML= "✕";
     delBtn.addEventListener("click", deleteTodo);
     span.innerText = text;
     li.appendChild(span);
