@@ -30,7 +30,7 @@ h1
 font: 700 8rem Arial;
 color: rgb(255, 255, 255);
 text-align: center;
-margin-top: 2.3em;
+margin-top: 1.9em;
 margin-block-end: 0.10em;
 text-shadow: 2px 3px 9px rgba(51, 51, 51, 0.2);
 }
@@ -86,11 +86,11 @@ AmPm
 
 .ask-name
 {
-  opacity: 0.9;
+  opacity: 0.8;
   text-align: center;
   position: relative;
-  font-size: 20pt;
-  font-weight: 500;
+  font-size: 14pt;
+  font-weight: 400;
   margin: 0;
 
 }
@@ -111,8 +111,6 @@ text-shadow: 2px 3px 9px rgba(51, 51, 51, 0.3);
   position: relative;
   outline: none;
   border: none;
-  font-weight:500;
-  font-size: 35px;
   margin-bottom: 10px;
   text-align: center;
   background: none;
@@ -121,7 +119,7 @@ text-shadow: 2px 3px 9px rgba(51, 51, 51, 0.3);
 }
 
 .name-input[type=text]
-{color: #e4af03; font-size: 34pt;}
+{color: #e4af03; font-size: 54pt; font-weight:500;}
 
 
 /* todo area */
