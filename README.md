@@ -18,10 +18,9 @@ A clone of the productivity chrome app Momentum on Vanilla JS
 - [x] Search
 - [x] Quote
 - [x] Background
-- [x] Slack hooks
 - [x] Dark mode
 - [x] Setting
-
+- [ ] Slack hooks
 
 ### Try it out
 [DEMO](https://butt3r.github.io/momintum/)
